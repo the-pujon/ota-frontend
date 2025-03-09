@@ -523,7 +523,7 @@ const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const formDataObject = Object.fromEntries(formData.entries());
       console.log("FormData as object:", formDataObject);
 
-        const response = await updateVisa({countryName: countryName, visaData: formData}).unwrap()
+        // const response = await updateVisa({countryName: countryName, visaData: formData}).unwrap()
         // console.log("re")
       toast.success("Visa information updated successfully!");
       // Optionally, redirect or refresh data after successful update

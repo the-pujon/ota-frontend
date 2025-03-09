@@ -186,7 +186,11 @@ const fileValidator = z.unknown().superRefine((val, ctx) => {
 const DocumentSchema = z.object({
   icon: fileValidator, // using custom file validation
   title: z.string().min(1, "Title is required"),
-  details: z.array(z.string().min(1, "Detail is required")).min(1, "At least one detail is required")
+  details: z.union([
+    z.array(z.string().min(1, "Detail is required")).min(1, "At least one detail is required"),
+    // z.any()
+    z.string()
+  ])
 });
 
 const updateDocumentSchema = z.object({
